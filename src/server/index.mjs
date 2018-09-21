@@ -1,4 +1,6 @@
-"use strict";
+// Primary Service file, responsible for serving game assets, and maintaining data continuity over the socket connection.
+
+
 
 import Express from 'express';
 import HTTP from 'http';
@@ -17,7 +19,8 @@ class Primary_Service {
 		this.options = options || {};
 	}
 	start () {
-		App.use(Express.static('public'))
+		App.use(Express.static('build'));
+		App.use(Express.static('public'));
 
 		App.get('/', function(req, res){
 			res.sendFile(__dirname + '/public/index.html');
