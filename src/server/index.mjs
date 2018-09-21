@@ -5,6 +5,7 @@ import HTTP from 'http';
 import SOCKETIO from 'socket.io';
 import DNS from 'dns';
 import OS from 'os';
+import {User} from './models/user.mjs'
 
 const App = Express();
 const http = HTTP.Server(App);
