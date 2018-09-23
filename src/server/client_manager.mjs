@@ -23,7 +23,7 @@ class Client_Manager {
 		new_client.authorize_registration();
 		this.register_new_client(new_client);
 		new_client.on('user:registered', this.handle_client_registered.bind(this));
-		new_client.on('disconnect', this.handle_client_disconnect.bind(this));
+		new_client.on('disconnected', this.handle_client_disconnect.bind(this));
 	}
 	handle_client_disconnect(client) {
 		delete this.connections[client.id];
